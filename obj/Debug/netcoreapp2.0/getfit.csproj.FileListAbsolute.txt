@@ -1,0 +1,11 @@
+/Users/macbookair/Documents/git/getfit/bin/Debug/netcoreapp2.0/getfit.deps.json
+/Users/macbookair/Documents/git/getfit/bin/Debug/netcoreapp2.0/getfit.runtimeconfig.json
+/Users/macbookair/Documents/git/getfit/bin/Debug/netcoreapp2.0/getfit.runtimeconfig.dev.json
+/Users/macbookair/Documents/git/getfit/bin/Debug/netcoreapp2.0/getfit.dll
+/Users/macbookair/Documents/git/getfit/bin/Debug/netcoreapp2.0/getfit.pdb
+/Users/macbookair/Documents/git/getfit/obj/Debug/netcoreapp2.0/getfit.csprojAssemblyReference.cache
+/Users/macbookair/Documents/git/getfit/obj/Debug/netcoreapp2.0/getfit.csproj.CoreCompileInputs.cache
+/Users/macbookair/Documents/git/getfit/obj/Debug/netcoreapp2.0/getfit.AssemblyInfoInputs.cache
+/Users/macbookair/Documents/git/getfit/obj/Debug/netcoreapp2.0/getfit.AssemblyInfo.cs
+/Users/macbookair/Documents/git/getfit/obj/Debug/netcoreapp2.0/getfit.dll
+/Users/macbookair/Documents/git/getfit/obj/Debug/netcoreapp2.0/getfit.pdb
