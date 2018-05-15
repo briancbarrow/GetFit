@@ -11,9 +11,10 @@ using System;
 namespace getfit.Migrations
 {
     [DbContext(typeof(getFitDbContext))]
-    partial class getFitDbContextModelSnapshot : ModelSnapshot
+    [Migration("20180515215428_updatedMigration")]
+    partial class updatedMigration
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

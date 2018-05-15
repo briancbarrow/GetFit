@@ -2773,7 +2773,7 @@
           "lib/netstandard1.3/Newtonsoft.Json.Bson.dll": {}
         }
       },
-      "Npgsql/3.2.5": {
+      "Npgsql/3.2.7": {
         "type": "package",
         "dependencies": {
           "System.Threading.Tasks.Extensions": "4.3.0"
@@ -7976,10 +7976,10 @@
         "newtonsoft.json.bson.nuspec"
       ]
     },
-    "Npgsql/3.2.5": {
-      "sha512": "89z5pHuLuwjkHz/cQLuM/YxlepR/0NKJP+Cvu8z1cAMv7AdKZnN5leQqV6HxIQDR245Xal1w5OH7kDb9hDRupg==",
+    "Npgsql/3.2.7": {
+      "sha512": "CxSXzWn/MNbHX8L1xfQSzrZfJEA2Yt5cvT27Az5abmvbqtUY1ab6xAkmBj5FfLyKCIYEnmSrxn1IY1+Jy13oFA==",
       "type": "package",
-      "path": "npgsql/3.2.5",
+      "path": "npgsql/3.2.7",
       "files": [
         "lib/net45/Npgsql.dll",
         "lib/net45/Npgsql.xml",
@@ -7989,7 +7989,7 @@
         "lib/netstandard1.3/Npgsql.xml",
         "lib/netstandard2.0/Npgsql.dll",
         "lib/netstandard2.0/Npgsql.xml",
-        "npgsql.3.2.5.nupkg.sha512",
+        "npgsql.3.2.7.nupkg.sha512",
         "npgsql.nuspec"
       ]
     },
@@ -13197,6 +13197,7 @@
       "Microsoft.EntityFrameworkCore.Design >= 2.0.3",
       "Microsoft.EntityFrameworkCore.Tools >= 2.0.3",
       "Microsoft.NETCore.App >= 2.0.0",
+      "Npgsql >= 3.2.7",
       "Npgsql.EntityFrameworkCore.PostgreSQL >= 2.0.0",
       "linq2db.PostgreSQL >= 1.10.0"
     ]
@@ -13256,6 +13257,10 @@
             "target": "Package",
             "version": "[2.0.0, )",
             "autoReferenced": true
+          },
+          "Npgsql": {
+            "target": "Package",
+            "version": "[3.2.7, )"
           },
           "Npgsql.EntityFrameworkCore.PostgreSQL": {
             "target": "Package",

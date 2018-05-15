@@ -6,12 +6,23 @@ using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using Microsoft.EntityFrameworkCore;
+using Npgsql;
+using Microsoft.Extensions.Configuration;
 
 namespace getfit.Controllers
 {
     [Route("api/[controller]")]
     public class ValuesController : Controller
     {
+        //IEntityTypeConfiguration configuration;
+        //readonly dynamic db;
+        public ValuesController(IConfiguration config)
+        {
+            var connStr = config["ConnectionStrings:getfitDbContext"];
+            var conn = new NpgsqlConnection(connStr);
+            //this.db = conn.Open();
+        }
+
         // GET api/values
         [HttpGet]
         public IEnumerable<string> Get()
@@ -32,6 +43,7 @@ namespace getfit.Controllers
         {
             Exercise posted = value.ToObject<Exercise>();
             var optionsBuilder = new DbContextOptionsBuilder<getFitDbContext>();
+            //optionsBuilder.UseNpgsql(Configuration.GetConnectionString("getfitDbContext"));
             //optionsBuilder.UseNpgsql("Data Source=getfitDbContext.cs");
             using (getFitDbContext db = new getFitDbContext(optionsBuilder.Options))
             {
