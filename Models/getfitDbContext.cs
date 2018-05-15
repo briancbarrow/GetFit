@@ -11,9 +11,9 @@ namespace getfit
         public DbSet<Exercise> Exercises { get; set; }
         public DbSet<User> Users { get; set; }
         public DbSet<UserExercise> UserExercises { get; set; }
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        {
-            optionsBuilder.UseNpgsql(Configuration.GetConnectionString("getfitDbContext"));
-        }
+        // protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        // {
+        //     optionsBuilder.UseNpgsql(Configuration.GetConnectionString("getfitDbContext"));
+        // }
     }
 }

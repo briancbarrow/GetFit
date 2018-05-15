@@ -12,6 +12,8 @@ namespace getfit.Controllers
     [Route("api/[controller]")]
     public class ValuesController : Controller
     {
+        //IEntityTypeConfiguration configuration;
+
         // GET api/values
         [HttpGet]
         public IEnumerable<string> Get()
@@ -32,6 +34,7 @@ namespace getfit.Controllers
         {
             Exercise posted = value.ToObject<Exercise>();
             var optionsBuilder = new DbContextOptionsBuilder<getFitDbContext>();
+            //optionsBuilder.UseNpgsql(Configuration.GetConnectionString("getfitDbContext"));
             //optionsBuilder.UseNpgsql("Data Source=getfitDbContext.cs");
             using (getFitDbContext db = new getFitDbContext(optionsBuilder.Options))
             {
