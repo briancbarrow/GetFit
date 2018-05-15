@@ -6,7 +6,7 @@ namespace getfit
     public class UserExercise
     {
         [Key]
-        public int Id { get; set; }
+        public int UserExerciseId { get; set; }
         [Required]
         public DateTime Date { get; set; }
         [Required]

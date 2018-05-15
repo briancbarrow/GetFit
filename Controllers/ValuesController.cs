@@ -6,6 +6,8 @@ using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using Microsoft.EntityFrameworkCore;
+using Npgsql;
+using Microsoft.Extensions.Configuration;
 
 namespace getfit.Controllers
 {
@@ -13,6 +15,13 @@ namespace getfit.Controllers
     public class ValuesController : Controller
     {
         //IEntityTypeConfiguration configuration;
+        //readonly dynamic db;
+        public ValuesController(IConfiguration config)
+        {
+            var connStr = config["ConnectionStrings:getfitDbContext"];
+            var conn = new NpgsqlConnection(connStr);
+            //this.db = conn.Open();
+        }
 
         // GET api/values
         [HttpGet]
