@@ -8,21 +8,24 @@ using Newtonsoft.Json.Linq;
 using Microsoft.EntityFrameworkCore;
 using Npgsql;
 using Microsoft.Extensions.Configuration;
+using getfit.Models;
 
 namespace getfit.Controllers
 {
     [Route("api/[controller]")]
     public class ValuesController : Controller
     {
+        //private readonly IDataAccessProvider
         //IEntityTypeConfiguration configuration;
         //readonly dynamic db;
         public ValuesController(IConfiguration config)
         {
-            var connStr = config["ConnectionStrings:getfitDbContext"];
-            var conn = new NpgsqlConnection(connStr);
-            //this.db = conn.Open();
+            // var connStr = config["ConnectionStrings:getfitDbContext"];
+            // var conn = new NpgsqlConnection(connStr);
+            // this.db = conn.Open();
+            Configuration = config;
         }
-
+        public IConfiguration Configuration { get; }
         // GET api/values
         [HttpGet]
         public IEnumerable<string> Get()
@@ -37,13 +40,14 @@ namespace getfit.Controllers
             return "value";
         }
 
-        // POST api/valuess
+        // POST api/values
         [HttpPost]
         public void Post([FromBody]JObject value)
         {
+            var connStr = Configuration.GetConnectionString("getfitDbContext");
             Exercise posted = value.ToObject<Exercise>();
             var optionsBuilder = new DbContextOptionsBuilder<getFitDbContext>();
-            //optionsBuilder.UseNpgsql(Configuration.GetConnectionString("getfitDbContext"));
+            optionsBuilder.UseNpgsql(connStr);
             //optionsBuilder.UseNpgsql("Data Source=getfitDbContext.cs");
             using (getFitDbContext db = new getFitDbContext(optionsBuilder.Options))
             {
@@ -63,6 +67,15 @@ namespace getfit.Controllers
         [HttpDelete("{id}")]
         public void Delete(int id)
         {
+            var connStr = Configuration.GetConnectionString("getfitDbContext");
+            var optionsBuilder = new DbContextOptionsBuilder<getFitDbContext>();
+            optionsBuilder.UseNpgsql(connStr);
+            using (getFitDbContext db = new getFitDbContext(optionsBuilder.Options))
+            {
+                if (db.Exercises.Where(t => t.ExerciseId == id).Count() > 0) // Check if element exists
+                    db.Exercises.Remove(db.Exercises.First(t => t.ExerciseId == id));
+                db.SaveChanges();
+            }            
         }
     }
 }

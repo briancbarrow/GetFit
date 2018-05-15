@@ -1,7 +1,7 @@
 using System;
 using System.ComponentModel.DataAnnotations;
 
-namespace getfit
+namespace getfit.Models
 {
     public class UserExercise
     {
